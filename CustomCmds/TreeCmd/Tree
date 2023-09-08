@@ -1,0 +1,108 @@
+#!/bin/bash
+
+lsflagArray=()
+sortFlagArray=()
+sortFlag=0
+
+while getopts 'AD:adsh' OPTION; do
+  case "$OPTION" in
+    A)
+      lsflagArray+=(-a )
+      ;;
+    D)
+
+      Dflag=1
+      if [ $OPTARG -lt 0 ]
+      then
+        echo "Invalid depth!"
+      else
+        maxDepth="$OPTARG"
+      fi
+
+      ;;
+    a)
+      sortFlag=1
+      sortFlagArray+=(-k9 )
+      ;;
+    d)
+      sortFlag=1
+      sortFlagArray+=(-k9 -r )
+      ;;
+    s)
+      lsflagArray+=(-Sr )
+      ;;
+    h)
+      echo "Usage: tree [-AD adsh] [directory]"
+      echo "List contents of directories in a tree-like format."
+      echo "  -A: All files are listed."
+      echo "  -D: Max display depth of the directory tree."
+      echo "  -a: All files are listed."
+      echo "  -d: List directories only."
+      echo "  -s: Sort files by size."
+      echo "  -h: Display this help and exit."
+      echo " Read README.md for more information."
+      exit 0
+      ;;
+    ?)
+      exit 1
+      ;;
+  esac
+done
+
+if [[ $sortFlag == 0 ]]
+then
+  sortFlagArray+=(-u)
+fi
+
+shift $((OPTIND-1))
+
+
+
+if [[ $Dflag == 1 ]]
+then
+  print_tree (){
+    cd $1
+    ls -l ${lsflagArray[@]} | tail -n +2 | sort ${sortFlagArray[@]}| while read -r line
+    do
+
+        myString=$(printf "%$2s")
+        echo -n ${myString// /|--}
+        curDir=$(echo $line | cut -d' ' -f9)
+        
+        echo $curDir
+
+        if [ -d "$curDir" ] && [ "$curDir" != "." ] && [ "$curDir" != ".." ] && (( $2 <= ($maxDepth - 1) )) 
+        then 
+            print_tree $curDir $(($2+1))
+            cd ..
+        fi
+    done
+
+  }
+
+  print_tree / 0
+
+else
+  print_tree (){
+    cd $1
+    ls -l ${lsflagArray[@]} | tail -n +2 | sort ${sortFlagArray[@]} | while read -r line
+    do
+
+        myString=$(printf "%$2s")
+        echo -n ${myString// /|--}
+        curDir=$(echo $line | cut -d' ' -f9)
+        
+        echo $curDir
+
+        if [ -d "$curDir" ] && [ "$curDir" != "." ] && [ "$curDir" != ".." ]
+        then 
+            print_tree $curDir $(($2+1))
+            cd ..
+        fi
+    done
+
+  }
+
+  print_tree $1 1
+
+fi

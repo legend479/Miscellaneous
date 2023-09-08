@@ -1,0 +1,42 @@
+Number of test cases = 100
+Max_Len_Arr = 100000
+
+Shell.c 
+real    0m14.016s
+user    0m12.369s
+sys     0m1.571s
+
+Merge.c 
+real    0m10.995s
+user    0m9.483s
+sys     0m1.484s
+
+Quick.c 
+real    0m10.961s
+user    0m9.430s
+sys     0m1.496s
+
+Insertion.c 
+real    1m19.827s
+user    1m18.331s
+sys     0m1.416s
+
+Selection.c 
+real    6m31.202s
+user    6m29.297s
+sys     0m1.778s
+
+(InsertionSort Optimised)Quick.c 
+real    0m34.042s
+user    0m29.398s
+sys     0m4.638s
+
+Bubble.c 
+real    34m43.582s
+user    34m37.111s
+sys     0m4.184s
+
+system_quick 
+real    0m11.560s
+user    0m9.896s
+sys     0m1.617s

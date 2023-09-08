@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="search.css">
+<body>
+    <div id="top"></div>
+    <!-- NAVBAR -->
+    <nav>
+        <ul class="ul-h">
+        <li> 
+            <!-- DROPDOWN MENU -->
+            <div class="drop">
+            <button class="dropbutton" style="font-size: 60px;">≡</button>
+            <div class="drop-content" style="font-weight:normal;">
+            <a href="../HomePage/Home.html#trending">Trending</a>
+            <a href="../HomePage/Home.html#latest">Latest Realease</a>
+            <a href="../HomePage/Home.html#topArt">Top Artists</a>
+            <a href="../HomePage/Home.html#topAlb">Top Albums</a>
+            <a href="../HomePage/Home.html#topSon">Top Songs</a>
+            </div></li>
+        <li></li>
+        <li><a href="../HomePage/Home.html"onmouseover="HoverOn(this)" onmouseout="HoverOff(this)">Home</a></li>
+        <li></li>
+        <li><a href="../AboutPage/about.html" onmouseover="HoverOn(this)" onmouseout="HoverOff(this)">About</a> </li>
+        <li></li>
+        <li><a href="../ArtistsPage/Artists.html"onmouseover="HoverOn(this)" onmouseout="HoverOff(this)">Artists</a> </li>
+        <li></li>
+        <li><a href="../SpotlightPage/Spotlight.html" onmouseover="HoverOn(this)" onmouseout="HoverOff(this)">Spotlight</a></li>
+        <li></li>
+        <li><a href="../SearchingPage/search.html""><img src="../MagBar.png" style="width: 10vh;transform:scaleX(-1);margin-left: 40vw;filter: invert(100%);"></a></li>
+        </ul>
+        <img src="../Logo.png" width="150px" style="position: absolute; bottom: -2%; right: 10px;">
+    </nav>
+    </div>
+    <a href="#top" class="Button" aria-label="Scroll to top" style="bottom: 0px; right:0px;">
+        <img src="../UpButton.png" width="100ptx">
+    </a>
+    <!-- BOTTOM BUTTON -->
+    <a href="#bottom" class="Button" aria-label="Scroll to bottom" 
+    style="bottom: 0px; left: 0px;">
+        <img src="../UpButton.png" width="100ptx" style="transform: rotate(180deg);">
+    </a>   
+    <br>
+    <div class="featured" style="padding-top:10px;">
+             <input autofocus id="search" placeholder="Search..." type="text">
+             <button onclick="getOption()" id="Search"> Search </button>
+             <div style="font-size:25px">
+                Explcitness:
+                <select id="select1">
+                    <option value="0" hidden></option>
+                    <option value="1">Explicit</option>
+                    <option value="2">No Explicit</option>
+                </select>
+                Time:
+            <input type="text" placeholder="In minutes" id="Time" value="">
+        <button onclick="clearoptions()" id="Clear"> Clear </button>
+             </div>
+            
+    </div>
+    <div class="container" style="size:auto"></div>
+    <div class="overlay"></div>
+    <div class="media hidden"></div>
+
+    <footer id="bottom">
+        <br>
+        <!-- <p style="text-align: center;font-family: ImposterFont; font-size: 80px; margin-bottom: 0;">#Suggesting you songs#</p> -->
+        <span id="WebName"></span>
+        <br>
+        <br>
+        <br>
+        <img src="../Logo.png" width="250px" style="position: relative; left:43%;">
+
+        <hr>
+        <a href="../TermsPage/terms.html" style="position: absolute;left:10%">Terms of Use</a>
+        <a href="../AboutPage/about.html" style="position:absolute; left:48%">About Us</a>
+        <a href="../PrivacyPage/privacy.html" style="position: absolute;right:10%">Privacy Policy</a>
+       
+
+        <br>
+        <hr>
+        <div class ="foot">
+            <div><a href="../HomePage/Home.html#topAlb" >Top Albums</a>
+                <ol>
+                    <li><a href="../ArtistPages/2/album3/divide.html" style="font-size: 4vh;">÷</a></li>
+                    <li><a href="../ArtistPages/1/album3/AHeadFullofDreams.html">A Head Full of Dreams</a></li>
+                    <li><a href="../ArtistPages/3/album2/SomeoneSomewhere.html">Someone Somewhere</a></li>
+                </ol>
+            </div>
+            <div><a href="../HomePage/Home.html#topSon">Top Songs</a>
+                <ol>
+                    <li>Exhale</li>
+                    <li>Blank Space</li>
+                    <li>Bad Habits</li>
+                </ol>
+            </div>
+
+            <div><a href="../HomePage/Home.html#topArt">Top Artists</a>
+                <ol>
+                    <li><a href="../ArtistPages/3/Jagjit_Singh.html">Jagjit Singh</a></li>
+                    <li><a href="../ArtistPages/5/Taylor_Swift.html">Taylor Swift</a></li>
+                    <li><a href="../ArtistPages/4/Sabrina_Carpenter.html">Sabrina Carpenter</a></li>
+                </ol>
+            </div>
+        </div>
+        
+        <br>
+        <br>
+        <hr>
+        <div style=" text-align:center;"><p style="display:inline;font-size: 3vh; color: chartreuse;">© :Error 404: Ltd All Rights Reserved</p></div>
+        
+    </footer>
+    <script src="search.js"></script>
+</body>
+<!-- <script src="./search.js"></script> -->
+</html>
+

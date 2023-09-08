@@ -1,0 +1,302 @@
+@font-face {
+  font-family: ImposterFont;
+  src: url(../../../Impostograph-Regular.ttf);
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+
+  font-family: ImposterFont;
+  background-color: #313131;
+}
+body nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+ul {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #2a2929;
+  /* background-size:  auto 100%; */
+}
+li {
+  list-style: none;
+  margin-right: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: ImposterFont;
+  line-height: 100px;
+}
+li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+section {
+  min-height: 55vh;
+  width: 100%;
+  display: grid;
+  place-items: top;
+  font-size: 50px;
+  font-weight: bold;
+  color: #a5d7e8;
+  background: url(../../../Wallpaper.jpg);
+  background-size: auto 100%;
+}
+section:target {
+  scroll-margin-top: 15vh;
+}
+.Button {
+  position: fixed;
+  z-index: 99;
+  border-radius: 4px;
+  opacity: 100%;
+  transition: opacity 0.1s ease-in-out;
+}
+.Button :hover {
+  opacity: 50%;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dropbutton {
+  background-color: #a5383f;
+  color: #fff;
+  font-weight: bold;
+  padding: 16px;
+  font-size: 30px;
+  border: none;
+}
+
+.drop {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.drop-content a {
+  color: #313131;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: #e0dfdf;
+}
+
+.drop-content a:hover {
+  background-color: #313131;
+  color: #e0dfdf;
+}
+
+.drop:hover .drop-content {
+  display: block;
+}
+
+.drop:hover .dropbutton {
+  background-color: #ca3e47;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    z-index: 9999;
+  }
+  
+  .hidden {
+    opacity: 0;
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  .HeadBG{
+    /* The image used */
+  background-image: url("multiply.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(10px);
+  z-index: 10;
+    
+  }
+
+
+  .Head img{
+    position: absolute; 
+    z-index: 11;
+    top:20vh;
+    left: 43vw;
+    width: 15vw;
+    border: 5px solid#000;
+  }
+
+  .details{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color:white;
+    position: absolute;
+    top:65vh;
+    width: 100%;
+    right:2vw;
+    text-align: center;
+  }
+
+  .Head .slash-text{
+    position: absolute;
+    z-index: 11;
+    top: 10vh;
+    left: 2vw;
+  }
+
+  .slash-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+  }
+  .slash-text .up,
+  .slash-text .down {
+    text-align: center;
+    font: 62px/100px arial;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+  }
+  .slash-text .up:before,
+  .slash-text .down:before {
+    content: attr(title);
+
+  }
+  .slash-text .up {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    right: 0;
+    bottom: 50%;
+  }
+  .slash-text .up:before {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+  }
+  .slash-text .down {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 5px;
+    bottom: 0;
+  }
+  .slash-text .down:before {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+  }
+  
+  footer {
+    background-color: #000;
+    color: #14ffec;
+    font-family: ImposterFont;
+    font-size: 40px;
+  }
+  .foot{
+    display:grid block;
+    width:100%;
+    text-align: center;
+    grid-template-columns: auto auto auto;
+    position: relative;
+  }
+  
+  footer {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3vh;
+  }
+  
+  footer a{
+    color: #fff;
+  }
+  
+  .foot li{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:2vh;
+    display: block;
+    padding: 0;
+    margin: 0;
+    height: 5vh;
+    text-align: center;
+    color: #fff;
+  }
+  .foot ol{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+  }
+
+  #titlecard{
+    font-size: 5vh;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  #WebName{
+    font-size: 100px;
+    font-weight: bold;
+    font-family: ImposterFont;
+    padding: 10px;
+    /* border: 1px solid black; */
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    padding-left: 32% ;
+  }

@@ -1,0 +1,363 @@
+@font-face {
+    font-family: ImposterFont;
+    src: url(../Impostograph-Regular.ttf);
+  }
+  
+  html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    
+  }  
+  
+  body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+
+    font-family: ImposterFont;
+    background-color: #313131;
+  }
+  body nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #2a2929;
+    /* background-size:  auto 100%; */
+    
+  }
+  li {
+    list-style: none;
+    margin-right: 20px;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: ImposterFont;
+    line-height: 100px;
+  }
+  li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+  }
+  section {
+    height: 55vh;
+    width: 100%;
+    display: grid;
+    place-items: top;
+    font-size: 50px;
+    font-weight: bold;
+    color: #A5D7E8;
+    background: url(../Wallpaper.jpg);
+    background-size: auto 100%;
+  }
+  section:target{
+    scroll-margin-top: 15vh;
+  }
+  .Button{
+  position: fixed;
+  z-index: 99;
+  border-radius: 4px;
+  opacity: 100%;
+  transition: opacity 0.1s ease-in-out;
+  }
+  .Button :hover{
+  opacity: 50%;
+  }
+
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.dropbutton {
+  background-color: #a5383f;
+ color: #fff;
+ font-weight: bold;
+padding: 16px;
+font-size: 30px;
+border: none;
+}
+
+.drop { 
+position: relative;
+display: inline-block;
+}
+
+.drop-content {
+display: none;
+position: absolute;
+background-color: #fff;
+min-width: 300px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.drop-content a {
+color: #313131;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+background-color: #e0dfdf;
+}
+
+.drop-content a:hover {
+  background-color: #313131;
+  color: #e0dfdf;
+}
+
+.drop:hover .drop-content {display: block;}
+
+.drop:hover .dropbutton {background-color:#CA3E47;}
+
+.artist-img{
+    text-align-last: center;
+}
+.artist-img p{
+  font-size: 100px;
+  font-weight: bold;
+  color: #A5D7E8;
+  padding: 10px;
+  margin: 0px;
+  padding-bottom: 30px;
+
+}
+h1{
+  font-size: 120px;
+  color: #e9ae23;
+  animation: glow 0.3s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #f8e3b4, 0 0 10px #f8e3b4, 0 0 15px #f8e3b4, 0 0 20px #f3d388, 0 0 25px #f1ca70, 0 0 30px #eebf51, 0 0 35px #ebb639;
+  }
+  to {
+    text-shadow: 0 0 10px #f8e3b0, 0 0 13px #f8e3b0, 0 0 17px #f8e3b0, 0 0 22px #f3d388, 0 0 27px #f1ca70, 0 0 32px #eebf51, 0 0 37px #ebb639;
+  }
+}
+.CountMeDownAhhh{
+  font-size: 60px;
+  font-weight: bold;
+  color: #A5D7E8;
+  padding: 0px;
+  margin: 0px;
+  text-align-last: center;
+  background-color: rgb(0, 34, 26);
+  width: 60%;
+  margin: auto auto;
+}
+#countdown{
+  font-size: 60px;
+  font-weight: bold;
+  color: #A5D7E8;
+}
+.CountMeDownAhhh p{
+  margin: 0px;
+  padding: 1vh;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+input[type="submit"] {
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+table {
+    border-collapse: collapse;
+    font-size: 50px;
+    width: 100%;
+    padding: auto;
+    background: #343434;
+    border: 2px solid rgb(74, 74, 74);
+    font-family: 'Times New Roman', Times, serif;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    /* border-bottom: 1px solid #ddd; */
+    border: 1px groove rgb(121, 121, 121);
+}
+tr:hover {
+    background-color: #593201;
+}
+.rating-stars img {
+    width: 40px;
+    height: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+tfoot tr {
+    color: #000b45;
+    /* text-align: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    align-tracks: center; */
+    text-align-last: center;
+    vertical-align: middle;
+
+}
+tfoot tr:hover {
+    background-color: #8d8d8d;
+}
+
+footer{
+  background-color: #000;
+  color: #14FFEC;
+  font-family: ImposterFont;
+  font-size: 40px;
+}
+
+.circle a.fill-div{
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  border-radius: 50%;
+  z-index: 99;
+  position: relative;
+  background-color: #A5D7E8;
+}
+
+.grid-item {
+  text-align: center;
+  position: relative;
+  top:40%;
+  display: inline-block;
+  width: 25vh;
+  height: 25vh; 
+}
+
+.grid-item img {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+}
+
+.grid-item .circle{
+  border-radius: 100% ;
+}
+
+.grid-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.grid-item:hover .overlay {
+  opacity: 1;
+}
+
+.grid-item .text {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.grid-item:hover .text {
+  opacity: 1;
+  transform: translate(-50%, -55%);
+}
+
+.grid-item .text p {
+  color: #fff;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.foot{
+  display:grid block;
+  width:100%;
+  text-align: center;
+  grid-template-columns: auto auto auto;
+  position: relative;
+}
+
+footer {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3vh;
+}
+
+footer a{
+  color: #fff;
+}
+
+.foot li{
+  font-family: 'Times New Roman', Times, serif;
+  font-size:2vh;
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: 5vh;
+  text-align: center;
+  color: #fff;
+}
+.foot ol{
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+#WebName{
+  font-size: 100px;
+  font-weight: bold;
+  font-family: ImposterFont;
+  padding: 10px;
+  /* border: 1px solid black; */
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  padding-left: 32% ;
+}

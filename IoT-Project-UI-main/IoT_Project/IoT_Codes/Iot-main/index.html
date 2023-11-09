@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Home UI</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+</head>
+<body>
+  <h1>Smart Home Control</h1>
+<div id="alerts"></div>
+<div id="alerts1"></div>
+  
+  <div class="controls">
+    <h2>Controls</h2>
+    <button id="lightButton" onclick="toggleLight()">Turn Light Off</button>
+    <button id="doorButton" onclick="toggleDoor()">Close Door</button>
+  </div>
+  
+  <div class="chart-container">
+    <canvas id="chart"></canvas>
+  </div>
+
+  <div class="position">
+    <h2>Current location</h2>
+    <p id="position-text"></p>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

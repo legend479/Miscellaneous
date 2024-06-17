@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+languages=("rust" "c" "cpp" "python3" "jscript" "nodejs" "lua" "golang")
+core_utils=("find" "xargs" "sed" "awk" "mv")
+
+# Combine languages and core utils into a single array
+combined_list=("${languages[@]}" "${core_utils[@]}")
+
+clear
+
+# Prompt the user to select an item from the combined list
+# echo "Select an item from the list:"
+selected=$(printf '%s\n' "${combined_list[@]}" | fzf)
+
+# Check if the selected item is a language or core util
+is_language=0
+for language in "${languages[@]}"; do
+	if [ "$language" == "$selected" ]; then
+		is_language=1
+		break
+	fi
+done
+
+# Prompt the user to enter a query
+read -p "Enter your query: " query
+
+clear
+
+# Display the result based on the selected item and query
+if [ "$is_language" -eq 1 ]; then
+	echo "Searching for $selected documentation..."
+	result=$(curl -sS cht.sh/$selected/$(echo "$query" | tr ' ' '+') | sed -r "s/\x1B\[[0-9;]*[JKmsu]//g")
+	if [ -z "$result" ]; then
+		echo "No documentation found for $selected : $query."
+		echo "Press any key to continue..."
+		read -n 1
+	else
+		echo "Documentation for $selected : $query -"
+		echo "$result"
+		echo "Press any key to continue..."
+		read -n 1
+	fi
+else
+	echo "Searching for $selected command usage..."
+	result=$(curl -sS cht.sh/$selected~$query | sed -r "s/\x1B\[[0-9;]*[JKmsu]//g")
+	if [ -z "$result" ]; then
+		echo "No command usage found for $selected : $query"
+		echo "Press any key to continue..."
+		read -n 1
+	else
+		echo "Command usage for $selected : $query -"
+		echo "$result"
+		echo "Press any key to continue..."
+		read -n 1
+	fi
+fi
+
+clear
+# End of file	
